@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
-import "net/http"
+import (
+	"fmt"
+	"io"
+	"log"
+	"net/http"
+	"os"
+)
 
 // import "github.com/angadthandi/gopl/ch1"
 // import "github.com/angadthandi/gopl/ch2"
@@ -16,8 +21,7 @@ func main() {
 	// ch1.Dup3()
 	// ch1.Fetchurls()
 	// ch1.Ex17Fetchurl()
-	// ch1.FetchAll()
-	// ch1.Server1()
+	// ch1.FetchAll()	// ch1.Server1()
 	// ch1.Server2()
 	// ch1.Server3()
 	// ch1.Server4()
@@ -29,13 +33,34 @@ func main() {
 
 	// ch3.Surface()
 
-	http.HandleFunc("/", handle)
+	// http.HandleFunc("/", handle)
+	http.HandleFunc("/", WebHandler)
 	http.ListenAndServe(":9000", nil)
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "%s", "Go!")
+
 	w.Header().Set("Content-Type", "image/svg+xml")
-	// ch3.Surface(w)
 	svg := ch3.Surface()
 	fmt.Fprintf(w, "%s", svg)
+
+	// w.Header().Set("Content-Type", "image/png")
+	// png := ch3.Mandelbrot()
+	// ret := http.FileServer(http.Dir(png))
+	// fmt.Fprintf(w, "%s", ret)
+	// ch3.Mandelbrot(w)
+}
+
+func WebHandler(w http.ResponseWriter, r *http.Request) {
+	var Path = ch3.Mandelbrot()
+	// ResizeImage(Path, 500)
+
+	img, err := os.Open(Path)
+	if err != nil {
+		log.Fatal(err) // perhaps handle this nicer
+	}
+	defer img.Close()
+	w.Header().Set("Content-Type", "image/png") // <-- set the content-type header
+	io.Copy(w, img)
 }
