@@ -47,7 +47,7 @@ func Anagram() {
 
 	r := anagram(s1, s2)
 
-	fmt.Printf("r = %g\n", r)
+	fmt.Printf("r = %v\n", r)
 }
 
 func anagram(s1, s2 string) bool {
