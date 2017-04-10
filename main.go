@@ -34,8 +34,11 @@ func main() {
 	// ch3.Surface()
 
 	// http.HandleFunc("/", handle)
-	http.HandleFunc("/", WebHandler)
-	http.ListenAndServe(":9000", nil)
+	// http.HandleFunc("/", WebHandler)
+	// http.ListenAndServe(":9000", nil)
+
+	// ch3.Comma()
+	ch3.Anagram()
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
