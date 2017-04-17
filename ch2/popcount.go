@@ -1,5 +1,3 @@
-package ch2
-
 var pc [256]byte
 
 func init() {

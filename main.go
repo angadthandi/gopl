@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
+	// "github.com/angadthandi/gopl/ch1"
+	// "github.com/angadthandi/gopl/ch2"
+	"github.com/angadthandi/gopl/ch3"
+	"github.com/angadthandi/gopl/ch4"
 	"io"
 	"log"
 	"net/http"
 	"os"
 )
-
-// import "github.com/angadthandi/gopl/ch1"
-// import "github.com/angadthandi/gopl/ch2"
-import "github.com/angadthandi/gopl/ch3"
 
 func main() {
 	// ch1.Echo1()
@@ -38,7 +38,11 @@ func main() {
 	// http.ListenAndServe(":9000", nil)
 
 	// ch3.Comma()
-	ch3.Anagram()
+	// ch3.Anagram()
+
+	// ch4.ShaDiffBits()
+	// ch4.ShaOut()
+	ch4.Reverse()
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
