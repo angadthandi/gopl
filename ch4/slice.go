@@ -9,16 +9,19 @@ func Reverse() {
 	s := []int{1, 2, 3, 4, 5}                // slice
 	a := [...]int{1, 2, 3, 4, 5}             // array
 	d := []int{1, 1, 2, 2, 3, 3, 4, 4, 5, 5} // slice
+	s1 := "Test1 Test2 Test3"                // string
 
 	str := "1  2  3"
 	reverse(s)
 	reversePtr(&a)
 	d = replaceDups(d)
 	str = squashSpace(str)
+	s1 = reverseByteSlice(s1)
 	// fmt.Printf("%v\n%T\n", s, s)
 	// fmt.Printf("%v\n%T\n", a, a)
 	// fmt.Printf("%v\n%T\n", d, d)
-	fmt.Printf("%v\n%T\n", str, str)
+	// fmt.Printf("%v\n%T\n", str, str)
+	fmt.Printf("%v\n%T\n", s1, s1)
 }
 
 func reverse(s []int) {
@@ -61,4 +64,12 @@ func squashSpace(str string) string {
 	}
 
 	return string(s)
+}
+
+func reverseByteSlice(s string) string {
+	bs := []byte(s)
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		bs[i], bs[j] = bs[j], bs[i]
+	}
+	return string(bs[:])
 }

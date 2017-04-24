@@ -42,7 +42,10 @@ func main() {
 
 	// ch4.ShaDiffBits()
 	// ch4.ShaOut()
-	ch4.Reverse()
+	// ch4.Reverse()
+	// ch4.Charcount()
+	// ch4.Wordfreq()
+	ch4.Issues()
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
