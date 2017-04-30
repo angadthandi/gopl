@@ -46,7 +46,8 @@ func main() {
 	// ch4.Charcount()
 	// ch4.Wordfreq()
 	// ch4.Issues()
-	ch4.Xkcd()
+	// ch4.Xkcd()
+	ch4.Poster()
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
