@@ -1,0 +1,20 @@
+<table>
+	<tr>
+		<th>Issue #</th>
+		<th>User</th>
+		<th>Title</th>
+	</tr>
+	{{range .Items}}
+	<tr>
+		<td>
+			<a href='{{.HTMLURL}}' target='_blank'>{{.Number}}</a>
+		</td>
+		<td>
+			<a href='{{.User.HTMLURL}}' target='_blank'>{{.User.Login}}</a>
+		</td>
+		<td>
+			<a href='{{.HTMLURL}}' target='_blank'>{{.Title}}</a>
+		</td>
+	</tr>
+	{{end}}
+</table>
