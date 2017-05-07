@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	// "github.com/angadthandi/gopl/ch1"
+	"github.com/angadthandi/gopl/ch1"
 	// "github.com/angadthandi/gopl/ch2"
 	"github.com/angadthandi/gopl/ch3"
-	"github.com/angadthandi/gopl/ch4"
+	// "github.com/angadthandi/gopl/ch4"
+	// "github.com/angadthandi/gopl/ch5"
 	"io"
 	"log"
 	"net/http"
@@ -19,7 +20,7 @@ func main() {
 	// ch1.Dup1()
 	// ch1.Dup2()
 	// ch1.Dup3()
-	// ch1.Fetchurls()
+	ch1.Fetchurls()
 	// ch1.Ex17Fetchurl()
 	// ch1.FetchAll()	// ch1.Server1()
 	// ch1.Server2()
@@ -47,7 +48,9 @@ func main() {
 	// ch4.Wordfreq()
 	// ch4.Issues()
 	// ch4.Xkcd()
-	ch4.Poster()
+	// ch4.Poster()
+
+	// ch5.Findlinks1()
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {

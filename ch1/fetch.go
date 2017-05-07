@@ -12,7 +12,10 @@ import (
 func ex18checkPrefix(uptr *string) {
 	b := strings.HasPrefix(*uptr, "http://")
 	if !b {
-		*uptr = "http://" + *uptr
+		b = strings.HasPrefix(*uptr, "https://")
+		if !b {
+			*uptr = "http://" + *uptr
+		}
 	}
 }
 
